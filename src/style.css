@@ -4,6 +4,8 @@
 
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *)); /* referencia: https://tailwindcss.com/docs/dark-mode */
+
 @theme 
 {
     --color-fondo: #0B1019;
