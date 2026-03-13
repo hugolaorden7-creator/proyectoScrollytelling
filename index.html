@@ -5,13 +5,69 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ProyectoScrollytelling</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+      .in {
+        margin-top: 100vh;
+      }
+      .boxA {
+        width: 100px;
+        height: 100px;
+        background: red;
+        margin-top: 10vh;
+      }
+      .boxB {
+        width: 100px;
+        height: 100px;
+        background: rgb(102, 255, 0);
+        margin-top: 10vh;
+      }
+      .boxC {
+        width: 100px;
+        height: 100px;
+        background: rgb(0, 247, 255);
+        margin-top: 10vh;
+      }
+
+      .boxD {
+        width: 100px;
+        height: 100px;
+        background: rgb(0, 4, 255);
+        margin-top: 10vh;
+      }
+
+      .boxE {
+        width: 100px;
+        height: 100px;
+        background: rgb(255, 0, 238);
+        margin-top: 10vh;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        background: red;
+        margin-top: 100vh;
+      }
+    </style>
   </head>
   <body class="bg-amber-50 dark:bg-fondo">
-    <button id="darkmode-switch">
+    <button id="darkmode-switch"></button>
+    <!--Ejemplos-->
+    <div class="in">a</div>
 
-    </button>     
-    <script type="module" src="/src/main.js">
-      
-    </script>
+    <div class="boxA">a</div>
+    <div class="boxB">b</div>
+    <div class="boxC">c</div>
+    <div class="boxD">D</div>
+    <div class="boxE">E</div>
+
+    <div class="box"></div>
+    <!--Contenido principal-->
+
+    <!--Script-->
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
