@@ -53,29 +53,29 @@ import './style.css'
             ease: "none",
             duration: 3,
         })
-            .to(".boxD", {
-                backgroundColor: "purple",
-                duration: 1
-            })
-            .to(".boxD", {
-                x: 0,
-                duration: 3
-            })
+        .to(".boxD", {
+            backgroundColor: "purple",
+            duration: 1
+        })
+        .to(".boxD", {
+            x: 0,
+            duration: 3
+        })
 
-            gsap.to(".boxE", {
-                scrollTrigger: {
-                    trigger: ".boxE",
-                    start: "top center",
-                    end: "top 100px",
-                    markers: true,
-                    pin: true, 
-                    toggleActions: "restart pause reverse pause"
-                    },
-                x: 400,
-                rotation: 360,
-                ease: "none",
-                duration: 3,
-       });
+        gsap.to(".boxE", {
+            scrollTrigger: {
+                trigger: ".boxE",
+                start: "top center",
+                end: "top 100px",
+                markers: true,
+                pin: true, 
+                toggleActions: "restart pause reverse pause"
+                },
+            x: 400,
+            rotation: 360,
+            ease: "none",
+            duration: 3,
+        });
       
 let theme = localStorage.getItem('theme');
 const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches
