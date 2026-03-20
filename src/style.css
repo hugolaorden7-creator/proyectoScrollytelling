@@ -10,6 +10,22 @@
 
 @theme 
 {
-    --color-fondo: #0B1019;
-    --color-text: #98A0AD;
+    --color-fondo-claro: #FFFBEB;
+    --color-fondo-oscuro: #0B1019;
+
+    --color-texto-claro: #0B1019; ;
+    --color-texto-oscuro: #FFFBEB;
+}
+
+@layer components 
+{
+    .body{
+        @apply bg-fondo-claro dark:bg-fondo-oscuro text-texto-claro dark:text-texto-oscuro;
+    }
+    .pagina-col{
+        @apply w-full h-screen relative flex flex-col;
+    }
+    .pagina-row{
+        @apply w-full h-screen relative flex flex-row;
+    }
 }
