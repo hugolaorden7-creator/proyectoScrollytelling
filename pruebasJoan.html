@@ -74,9 +74,14 @@
 
     <!--Segunda página-->
     <section
-      class="bg-blue-800 pagina-col justify-center items-center text-center pagina-2"
+      class="bg-gray-900 pagina-col justify-center items-center text-center pagina-2"
     >
       <h1 class="text-4xl font-bold">Primer proyecto</h1>
+        <section class="flex flex-row items-center figma">
+            <img src="/figma.svg" class="figma-logo w-30">
+            <h2 class="figma-title text-4xl">Figma</h2>
+        </section>
+
     </section>
 
     <!-- <div class="pagina justify-between items-center relative">
@@ -109,6 +114,32 @@
                 pin:true,                
                 start: 'top top',
                 end: '+=1000',
+            }
+        })
+        gsap.fromTo('.figma-logo', {
+            width: 300,
+        },{
+            width: 100,
+            scrollTrigger: {
+                trigger: '.figma-logo',
+                start: '+=300',
+                end: '+=1000',
+                toggleActions: "restart pause reverse pause"
+            }
+        })
+
+        gsap.fromTo('.figma-title', {
+            opacity: 0,
+            display: 'none'
+        },{
+            opacity: 1,
+            display: 'block',
+            scrollTrigger: {
+            
+                trigger: '.figma-title',
+                start: '+=300',
+                end: '+=1000',
+                toggleActions: "restart pause reverse pause"
             }
         })
     </script>
