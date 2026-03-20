@@ -76,7 +76,19 @@ import './style.css'
             ease: "none",
             duration: 3,
         });
+
+        gsap.to('.btn-cambiar-tema', {
+            x: 200, 
+            rotation: 360,
+            scrollTrigger: {
+                trigger: '.btn-cambiar-tema',
+                start: 700,
+                end: 1000,
+                scrub: true
+            }
+        });
       
+console.log('a')
 let theme = localStorage.getItem('theme');
 const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches
 

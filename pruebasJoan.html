@@ -1,4 +1,3 @@
-<!-- ejemplos: https://casperscaviar.com -->
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,16 +5,118 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ProyectoScrollytelling</title>
-    <script type="module" src="/src/main.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+      .in {
+        margin-top: 100vh;
+      }
+      .boxA {
+        width: 100px;
+        height: 100px;
+        background: red;
+        margin-top: 10vh;
+      }
+      .boxB {
+        width: 100px;
+        height: 100px;
+        background: rgb(102, 255, 0);
+        margin-top: 10vh;
+      }
+      .boxC {
+        width: 100px;
+        height: 100px;
+        background: rgb(0, 247, 255);
+        margin-top: 10vh;
+      }
+
+      .boxD {
+        width: 100px;
+        height: 100px;
+        background: rgb(0, 4, 255);
+        margin-top: 10vh;
+      }
+
+      .boxE {
+        width: 100px;
+        height: 100px;
+        background: rgb(255, 0, 238);
+        margin-top: 10vh;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        background: red;
+        margin-top: 100vh;
+      }
+    </style>
   </head>
-  <body class="p-2 bg-amber-50 dark:bg-fondo">
+  <body class="body">
+    <!--Primera página-->
+    <section class="pagina-col justify-center items-center text-center pagina-1">
+      <h1 class="text-4xl font-bold">Baja para descubrir ↓</h1>
 
-    <button class="p-2 flex justify-center items-center dark:text-white btn-cambiar-tema fixed right-5" id="theme-switch">
-      <span class="icon-[lineicons--night] dark:icon-[material-symbols--light-mode-rounded] h-20 w-20"></span>
-    </button> 
+      <button
+        class="p-2 flex justify-center items-center dark:text-white btn-cambiar-tema fixed right-4 top-4 text-3xl"
+        id="theme-switch"
+      >
+        <span
+          class="icon-[lineicons--night] dark:icon-[material-symbols--light-mode-rounded]"
+        ></span>
+      </button>
 
+      <p class="mt-6 animate-bounce">↓ Scroll</p>
+
+      <p class="mt-60 animate-pulse capitalize">Joan & hugo</p>
+    </section>
+
+    <!--Segunda página-->
+    <section
+      class="bg-blue-800 pagina-col justify-center items-center text-center pagina-2"
+    >
+      <h1 class="text-4xl font-bold">Primer proyecto</h1>
+    </section>
+
+    <!-- <div class="pagina justify-between items-center relative">
+      <h1>Baja para ver el efecto de revelado ↓</h1>
+      <button class="p-2 rounded-md" id="theme-switch">
+        <span
+          class="icon-[lineicons--night] dark:icon-[material-symbols--light-mode-rounded]"
+        ></span>
+      </button>
+    </div> -->
+
+    <!--Ejemplos-->
+
+    <div class="boxA">a</div>
+    <div class="boxB">b</div>
+    <div class="boxC">c</div>
+    <div class="boxD">D</div>
+    <div class="boxE">E</div>
+
+    <div class="box"></div>
+    <!--Contenido principal-->
+
+    <!--Script-->
+    <script type="module" src="/src/main.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to('.pagina-2', {
+            scrollTrigger: {
+                trigger: '.pagina-2',
+                pin:true,                
+                start: 'top top',
+                end: '+=1000',
+            }
+        })
+    </script>
+  </body>
+</html>
+
+    
+    <!--script>
     <section id="cajas_movimiento" class="h-screen">
         <div class="w-10 h-10 flex justify-center items-center border border-red-600 caja">1</div>
         <div class="w-10 h-10 flex justify-center items-center border border-red-600 caja2">2</div>
@@ -70,7 +171,6 @@
         <div class="flex justify-center items-center bg-green-400 rounded-md item">_</div>
 
     </section>
-    <script>
         gsap.registerPlugin(ScrollTrigger);
         gsap.to('.caja', {
             x: 200
@@ -121,6 +221,8 @@
             }
         });
         
-    </script>
+    </script-->
+
+
   </body>
 </html>
