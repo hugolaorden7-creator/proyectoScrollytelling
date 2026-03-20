@@ -10,8 +10,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   </head>
-  <body class="p-2">
+  <body class="p-2 bg-amber-50 dark:bg-fondo">
 
+    <button class="p-2 flex justify-center items-center dark:text-white btn-cambiar-tema fixed right-5" id="theme-switch">
+      <span class="icon-[lineicons--night] dark:icon-[material-symbols--light-mode-rounded] h-20 w-20"></span>
+    </button> 
 
     <section id="cajas_movimiento" class="h-screen">
         <div class="w-10 h-10 flex justify-center items-center border border-red-600 caja">1</div>
@@ -19,7 +22,7 @@
         <div class="w-10 h-10 flex justify-center items-center border border-red-600 caja3">3</div>
     </section>
 
-    <section id="muchas cajas" class="grid grid-cols-5 w-1/5" >
+    <section id="muchas cajas" class="h-screen grid grid-cols-5 w-1/5" >
         <div class="flex justify-center items-center bg-green-400 rounded-md item">_</div>
         <div class="flex justify-center items-center bg-green-400 rounded-md item">_</div>
         <div class="flex justify-center items-center bg-green-400 rounded-md item">_</div>
@@ -105,6 +108,18 @@
                 grid: [9,5],
             },
         })
+       
+
+        gsap.to('.btn-cambiar-tema', {
+            x: 200, 
+            rotation: 360,
+            scrollTrigger: {
+                trigger: '.btn-cambiar-tema',
+                start: 500,
+                end: 1000,
+                scrub: true
+            }
+        });
         
     </script>
   </body>
