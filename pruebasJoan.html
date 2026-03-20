@@ -81,6 +81,11 @@
             <img src="/figma.svg" class="figma-logo w-30">
             <h2 class="figma-title text-4xl">Figma</h2>
         </section>
+        <section class="pagina-2-descripcion w-200 text-"> 
+            <p>
+                En esta práctica tuvimos que crear diferentes ejemplos de interfaces de usuario para diversas aplicaciones. Para ello usamos la herramiente de Figma
+            </p>
+        </section>
 
     </section>
 
@@ -113,7 +118,7 @@
                 trigger: '.pagina-2',
                 pin:true,                
                 start: 'top top',
-                end: '+=1000',
+                end: '+=10000',
             }
         })
         gsap.fromTo('.figma-logo', {
@@ -139,6 +144,51 @@
                 trigger: '.figma-title',
                 start: '+=300',
                 end: '+=1000',
+                toggleActions: "restart pause reverse pause"
+            }
+        })
+            
+        gsap.fromTo('.pagina-2-descripcion', {
+            display: 'none',
+            opacity: 0
+        },{
+            display: 'block',
+            opacity: 1,
+            scrollTrigger: {
+                trigger: '.figma',
+                start: '+=1300',
+                end: '+=2000',
+                toggleActions: "restart pause reverse pause"
+            }
+        })
+    
+        gsap.to('.figma', {
+            y: -50,
+            scrollTrigger: {
+                trigger: '.figma',
+                start: '+=1300',
+                end: '+=2000',
+                toggleActions: "restart pause reverse pause"
+            }
+        })
+
+        gsap.to('.pagina-2-descripcion', {
+            display: 'none',
+            opacity: 0,
+            scrollTrigger: {
+                trigger: '.figma',
+                start: '+=2000',
+                end: '+=3000',
+                toggleActions: "restart pause reverse pause"
+            }
+        })
+
+        gsap.to('.figma', {
+            y: -400,
+            scrollTrigger: {
+                trigger: '.figma',
+                start: '+=2100',
+                end: '+=3000',
                 toggleActions: "restart pause reverse pause"
             }
         })
