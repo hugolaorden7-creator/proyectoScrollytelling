@@ -2,6 +2,7 @@ import './style.css'
 //https://gsap.com/docs/v3/Plugins/ScrollTrigger/
 
       gsap.registerPlugin(ScrollTrigger);
+      gsap.registerPlugin(SplitText) 
 
       gsap.to(".box", {
         x: 500,
@@ -184,7 +185,9 @@ tlPagina1.from('.inicio-descripcion', {
 });
 
 tlPagina1.to('.btn-cambiar-tema', {
-x: 200,
+  x: 10,
+      opacity: 0,
+
 rotation: 360
 });
 
@@ -200,13 +203,14 @@ tpl.to('.giro', {
 
 //-------------Pagina 1-------------
 
+//-------------Pagina 2-------------
 
     
 let tlPagina2 = gsap.timeline({
   scrollTrigger: {
     trigger: '.pagina-2',
     start: 'top top',
-    end: '+=1000',
+    end: '+=500',
     scrub: true,
     pin: true
   }
@@ -237,32 +241,110 @@ tlPagina2.from('.figma-caja', {
   stagger: 0.3,
   duration: 1.5
 }, "+=1");
+//primera accion
+
+tlPagina2.to('.figma-caja-2 ', {
+  scale: 0.8,
+  duration: 1.5
+}, "+=0.5");
+
+tlPagina2.to('.figma-caja-3', {
+  scale: 0.8,
+  duration: 1.5
+}, "<");
+
+tlPagina2.to('.figma-caja-1', {
+  scale: 1.1,
+  duration: 1
+}, "<"); 
+//Segunda accion
+tlPagina2.to('.figma-caja-1', {
+  scale: 0.8,
+  duration: 1.5
+}, "+=0.5");
+
+tlPagina2.to('.figma-caja-2', {
+  scale: 1.1,
+  duration: 1
+}, "<"); 
+//tercera accion
+tlPagina2.to('.figma-caja-2', {
+  scale: 0.8,
+  duration: 1.5
+}, "+=0.5");
+
+tlPagina2.to('.figma-caja-3', {
+  scale: 1.1,
+  duration: 1
+}, "<"); 
+
+
+//FINAL
+tlPagina2.to('.figma-caja', {
+  scale: 1,
+  duration: 2
+}, "+=1");
 
 tlPagina2.to('.figma-cajas', {
-  x: -1500,
+  opacity: 0,
+  scale: 0.5,
   duration: 2
-});
+}, "+=1");
 
-tlPagina2.to('.figma-caja', {
- opacity: 0,
-  y: 100,
-  stagger: 0.3,
-  duration: 1.5
-});
+//-------------Pagina 2-------------
 
-        
-
-        let tlPagina3 = gsap.timeline({
+//-------------Pagina 3-------------
+let tlPagina3 = gsap.timeline({
   scrollTrigger: {
     trigger: '.pagina-3',
     start: 'top top',
     end: '+=1000',
-    scrub: true,
+    scrub: 1,
     pin: true
-            }
-        });
-tlPagina3.from('.descripcion', {
+  }
+});
+
+tlPagina3.from('.pagina-3 h1', {
+  y: 100,
   opacity: 0,
-  x: 100,
-  duration: 1.5
-}, "+=1");
+  filter: "blur(10px)", //difuminado
+  duration: 1.5,
+});
+
+tlPagina3.from('.pagina-3 p', {
+  opacity: 0,
+  stagger: 0.5,
+  duration: 1.5,
+}, "-=0.5");
+
+tlPagina3.to('.pagina-3 h1, .pagina-3 p', {
+  opacity: 0,
+  scale: 0.9,
+  stagger: 0.2,
+  duration: 1,
+  delay: 1
+});
+
+//-------------Pagina3-------------
+//-------------PaginaUltima-------------
+let tlPagina4 = gsap.timeline({
+  scrollTrigger: {
+    trigger: '.pagina-4',
+    start: 'top top',
+    end: '+=200',
+    scrub: 1,
+    pin: true
+  }
+});
+
+
+// split elements with the class "split" into words and characters
+let split = SplitText.create(".split", { type: "words, chars" });
+
+// now animate the characters in a staggered fashion
+tlPagina4.from(split.chars, {
+  duration: 1, 
+  y: 100,       // animate from 100px below
+  autoAlpha: 0, // fade in from opacity: 0 and visibility: hidden
+  stagger: 0.05 // 0.05 seconds between each
+});
