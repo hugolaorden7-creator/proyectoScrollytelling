@@ -28,4 +28,8 @@
     .pagina-row{
         @apply w-full h-screen relative flex flex-row;
     }
+
+    .figma-caja{
+        @apply  w-full p-6 border-gray-500 border-1 rounded-2xl
+    }
 }
