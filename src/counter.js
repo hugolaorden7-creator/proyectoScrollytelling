@@ -188,7 +188,10 @@ tlPagina2.to('.figma-title', {
   duration: 1
 }, '<')
 
-
+tlPagina2.to('.pagina-2', {
+  opacity: '0'
+ 
+})
 
 
 const tlPagina3 = gsap.timeline({
