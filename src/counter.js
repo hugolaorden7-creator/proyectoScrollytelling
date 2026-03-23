@@ -12,11 +12,12 @@ let tlPagina2 = gsap.timeline({
   scrollTrigger: {
     trigger: '.pagina-2',
     start: 'top top',
-    end: '+=10000',
+    end: '+=11000',
     scrub: true,
     pin: true
   }
 });
+
 
 tlPagina2.from('.figma-logo', {
   y: -100,
@@ -115,7 +116,9 @@ tlPagina2.to('.figma-caja-3', {
 }, "<"); 
 
 
-//FINAL
+
+
+//FINAL de las cajas
 tlPagina2.to('.figma-caja', {
   scale: 1,
   duration: 2
@@ -126,6 +129,78 @@ tlPagina2.to('.figma-cajas', {
   scale: 0.5,
   duration: 2
 }, "+=1");
+
+
+// El logo se cae
+
+tlPagina2.to('.figma', {
+  y: 10,
+  rotate: 30,
+  ease: 'bounce',
+  duration: 2
+})
+
+tlPagina2.to('.figma-separador', {
+  y: '100vh',
+  x: 300,
+  rotate: 60,
+  duration: 3
+}, '-=1.4')
+
+tlPagina2.to('.figma-separador', {
+  opacity: 0,
+  duration: 1
+}, '<')
+
+tlPagina2.to('.titulo-pagina-2', {
+  y: '100vh',
+  x: 300,
+  rotate: 60,
+  duration: 2
+}, '-=2.1')
+
+tlPagina2.to('.titulo-pagina-2', {
+  opacity: 0,
+  duration: 1
+}, '<')
+
+tlPagina2.to('.figma-logo', {
+  y: '100vh',
+  x: 300,
+  rotate: 60,
+  duration: 2
+}, '-=1.3')
+
+tlPagina2.to('.figma-logo', {
+  opacity: 0,
+  duration: 1
+}, '<')
+
+tlPagina2.to('.figma-title', {
+  y: '100vh',
+  x: 300,
+  rotate: 60,
+  duration: 2
+}, '<')
+
+tlPagina2.to('.figma-title', {
+  opacity: 0,
+  duration: 1
+}, '<')
+
+
+
+
+const tlPagina3 = gsap.timeline({
+  scrollTrigger: {
+    trigger: '.pagina-3',
+    start: 'top top',
+    end: '+=10000',
+    scrub: true,
+    pin: true,
+  }
+});
+
 
 
 let theme = localStorage.getItem('theme');
