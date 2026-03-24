@@ -12,7 +12,7 @@ let tlPagina2 = gsap.timeline({
   scrollTrigger: {
     trigger: '.pagina-2',
     start: 'top top',
-    end: '+=11000',
+    end: '+=1100',
     scrub: true,
     pin: true
   }
@@ -198,7 +198,7 @@ const tlPagina3 = gsap.timeline({
   scrollTrigger: {
     trigger: '.pagina-3',
     start: 'top top',
-    end: '+=10000',
+    end: '+=1000',
     scrub: true,
     pin: true,
   }
@@ -207,7 +207,36 @@ const tlPagina3 = gsap.timeline({
 tlPagina3.from('.angular-logo', {
   opacity: 0,
   x:100
-});
+}, "+=1");
+
+tlPagina3.from('.angular-caja', {
+  opacity: 0,
+  x: 100,
+  stagger: 0.3,
+  duration: 1.5
+}, "+=1");
+
+tlPagina3.to('.angular-caja-magica', {
+  y: 410,
+  duration: 1.5
+}, ">");
+
+tlPagina3.to('.angular-cajas', {
+  opacity: 0,
+
+}, ">");
+tlPagina3.from('.angular-cajas-3', {
+  opacity: 0,
+
+}, ">");
+tlPagina3.to('.angular-cajas-3', {
+  opacity: 1,
+
+}, ">");
+
+
+
+
 
 let theme = localStorage.getItem('theme');
 const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches
