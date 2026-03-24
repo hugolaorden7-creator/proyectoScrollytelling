@@ -204,7 +204,10 @@ const tlPagina3 = gsap.timeline({
   }
 });
 
-
+tlPagina3.from('.angular-logo', {
+  opacity: 0,
+  x:100
+});
 
 let theme = localStorage.getItem('theme');
 const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches
