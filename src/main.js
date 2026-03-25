@@ -7,11 +7,11 @@ gsap.registerPlugin(SplitText)
 
 const contenedorFondo = document.getElementById("contenedor-fondo")
 
-for(let i=0; i<300; i++) {
+for(let i=0; i<105; i++) {
   const fondoCaja = document.createElement("div");
 
   fondoCaja.classList = [
-    "fondo-caja size-20 border border-blue-400"
+    "fondo-caja size-30 border border-blue-400"
   ]
 
   contenedorFondo.appendChild(fondoCaja)
@@ -25,7 +25,6 @@ gsap.fromTo('.fondo-caja',{
 }, {
   scale: 0.1,
   opacity: 0,
-  ease: "power1.inOut",
   stagger: {
     //grid: [7,15],
     from: "center",
