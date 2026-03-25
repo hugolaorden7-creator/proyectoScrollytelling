@@ -208,12 +208,20 @@ tlPagina3.from('.angular-logo', {
   opacity: 0,
   x:100
 });
+tlPagina3.from('.angular-cajas-1', {
+  y: 100,
+  duration: 1
+});
 
-tlPagina2.fromTo('.angular-cajas-3', {
-    autoAlpha: 1
-},{
-    autoAlpha: 0,
-},  "+=4")
+tlPagina3.from('.angular-cajas-2', {
+  autoAlpha: 0,
+  
+});
+tlPagina3.from('.angular-cajas-3', {
+  autoAlpha: 0,
+});
+
+
 
 // tlPagina3.to('.angular-logo', {
 //   y: -100,
@@ -230,11 +238,17 @@ tlPagina2.fromTo('.angular-cajas-3', {
 tlPagina3.to('.angular-caja ', {
   y: -150,
   duration: 1.5,
-
 }, "+=2");
 
 
+
+tlPagina3.to('.angular-cajas-2 ', {
+  autoAlpha: 1,
+  opacity: 1
+}, "<");
+
 tlPagina3.to('.angular-cajas-3 ', {
+
   autoAlpha: 1,
 }, "<");
 

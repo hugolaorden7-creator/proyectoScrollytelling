@@ -271,19 +271,45 @@ const tlPagina3 = gsap.timeline({
     pin: true,
   }
 });
+//primera animacion
 
 tlPagina3.from('.angular-logo', {
   opacity: 0,
   x:100
 });
 
+
+tlPagina3.from('.pagina-3 h1', {
+  y: 100,
+  opacity: 0,
+  filter: "blur(10px)", //difuminado
+  duration: 1.5,
+});
+
+tlPagina3.from('.pagina-3 p', {
+  opacity: 0,
+  stagger: 0.5,
+  duration: 1.5,
+}, "-=0.5");
+
+tlPagina3.to('.pagina-3 h1, .pagina-3 p', {
+  opacity: 0,
+  scale: 0.9,
+  stagger: 0.2,
+  duration: 1,
+  delay: 1
+});
+
+// animacion cajas
+
+
 tlPagina3.from('.angular-cajas-1', {
   opacity: 0,
-  delay: 1
 })
 
 tlPagina3.to('.angular-logo', {
-  y: -170
+  y: -160,
+  duration: 2
 }, "<")
 
 tlPagina3.to('.angular-caja', {
@@ -299,13 +325,18 @@ tlPagina3.to(".angular-cajas-1 > .angular-caja", {
   opacity: 0
 }, "<")
 
+
+
+
+
 tlPagina3.from(".angular-cajas-3", {
   opacity: 0,
   delay: 0.4
 }, "<")
 
-
-
+tlPagina3.to(".angular-cajas-2", {
+  opacity: 0
+}, "<")
 
 
 /* Difuminado
