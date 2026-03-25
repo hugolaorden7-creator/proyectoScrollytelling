@@ -5,13 +5,15 @@ import './style.css'
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(SplitText) 
 
+// -------------------- Fondo ---------------------
+
 const contenedorFondo = document.getElementById("contenedor-fondo")
 
 for(let i=0; i<105; i++) {
   const fondoCaja = document.createElement("div");
 
   fondoCaja.classList = [
-    "fondo-caja size-30 border border-blue-400"
+    "fondo-caja size-30 border"
   ]
 
   contenedorFondo.appendChild(fondoCaja)
@@ -20,7 +22,7 @@ for(let i=0; i<105; i++) {
 
 gsap.fromTo('.fondo-caja',{
   scale:1,
-  opacity: 0.4,
+  opacity: 0.6,
   
 }, {
   scale: 0.1,
@@ -33,6 +35,8 @@ gsap.fromTo('.fondo-caja',{
   },
   duration: 8
 })
+
+// ----------------Fondo------------------
 
 
 //-------------Pagina 1-------------
@@ -54,20 +58,13 @@ tlPagina1.from('.inicio-descripcion', {
 
 tlPagina1.to('.btn-cambiar-tema', {
   x: 10,
-      opacity: 0,
-
-rotation: 360
+  opacity: 0,
+  rotation: 360
 });
 
-let tpl = gsap.timeline({
-  repeat: -1
-});
-
-tpl.to('.giro', {
-  rotation: 360,
-  duration: 2,
-  ease: "linear"
-});
+tlPagina1.to('.pagina-1', {
+  opacity: 0
+})
 
 //-------------Pagina 1-------------
 
@@ -87,6 +84,16 @@ const tlPagina2 = gsap.timeline({
     pin: true
   }
 });
+
+tlPagina2.fromTo('.fondo-caja',
+  {
+    borderColor: '#8aaeeb'
+  }
+  ,{
+    borderColor: '#EB3D40',
+    duration: 2
+  }
+)
 
 tlPagina2.from('.figma-logo', {
   y: -100,
@@ -270,6 +277,11 @@ const tlPagina3 = gsap.timeline({
     pin: true,
   }
 });
+
+tlPagina3.to('.fondo-caja', {
+  borderColor: '#EB56C4'
+})
+
 //primera animacion
 
 tlPagina3.from('.angular-logo', {
@@ -407,14 +419,34 @@ if(theme == 'dark') { document.documentElement.classList.add('dark') }
 
 // Boton de cambio de tema
 const themeSwitch = document.getElementById('theme-switch');
-      
+
+// Fondo de la pagina
+const fondo = document.getElementById('contenedor-fondo');
+
 // Listener de click para el boton del cambio de tema que cambia y guarda el estilo de la pagina
 themeSwitch.addEventListener('click', function() {
     document.documentElement.classList.toggle('dark'); 
 
-    if(theme && theme == 'dark') { localStorage.setItem('theme', 'light') }
-    else if(theme) { localStorage.setItem('theme', 'dark') }
+    if(theme && theme == 'dark') { localStorage.setItem('theme', 'light'); theme = 'light' }
+    else if(theme) { localStorage.setItem('theme', 'dark'); theme = 'dark' }
+
+
+    console.log(theme)
+
+    if(theme == 'light') {
+      fondo.classList.add('hidden')
+    }
+    else {
+      fondo.classList.remove('hidden')
+    }
 })
+
+if(theme == 'light') {
+  fondo.classList.add('hidden')
+}
+else {
+  fondo.classList.remove('hidden')
+}
 
 // localStorage.removeItem('theme') // Solo para probar si se pone el estilo por defecto del usuario
 
