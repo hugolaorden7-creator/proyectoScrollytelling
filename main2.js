@@ -201,3 +201,49 @@ themeSwitch.addEventListener('click', function() {
             }
         });
         
+
+
+        
+      <section class="flex flex-row items-center gap-10 angular-cajas3">
+        <!--Caja1-->
+        <div class="angular-caja">
+          <div class="h-70">
+            <!--El " blur-sm "es para el difucminado-->
+            <img
+              src="public/zelda.jpg"
+              class="w-full h-full object-cover border-2 border-slate-400"
+              alt="Obra"
+            />
+          </div>
+          <h3 class="text-lg">Titulo</h3>
+          <p class="uppercase text-xs text-descripciones">Descripcion</p>
+        </div>
+
+        <!--Caja2-->
+
+        <div class="angular-caja opacity-0">
+          <div class="h-70">
+            <!--El " blur-sm "es para el difucminado-->
+            <img
+              src="public/zelda.jpg"
+              class="w-full h-full object-cover border-2 border-slate-400"
+              alt="Obra"
+            />
+          </div>
+        </div>
+
+        <!--Caja3-->
+
+        <div class="angular-caja angular-caja">
+          <div class="h-70">
+            <!--El " blur-sm "es para el difucminado-->
+            <img
+              src="public/zelda.jpg"
+              class="w-full h-full object-cover border-2 border-slate-400"
+              alt="Obra"
+            />
+          </div>
+          <h3 class="text-lg">Titulo</h3>
+          <p class="uppercase text-xs text-descripciones">Descripcion</p>
+        </div>
+      </section>

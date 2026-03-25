@@ -198,7 +198,7 @@ const tlPagina3 = gsap.timeline({
   scrollTrigger: {
     trigger: '.pagina-3',
     start: 'top top',
-    end: '+=1000',
+    end: '+=1500',
     scrub: true,
     pin: true,
   }
@@ -207,32 +207,65 @@ const tlPagina3 = gsap.timeline({
 tlPagina3.from('.angular-logo', {
   opacity: 0,
   x:100
-}, "+=1");
+});
 
-tlPagina3.from('.angular-caja', {
-  opacity: 0,
-  x: 100,
-  stagger: 0.3,
+tlPagina2.fromTo('.angular-cajas-3', {
+    autoAlpha: 1
+},{
+    autoAlpha: 0,
+},  "+=4")
+
+// tlPagina3.to('.angular-logo', {
+//   y: -100,
+//       duration: 1.5
+
+// });
+
+// tlPagina3.from('.angular-caja', {
+//   opacity: 0,
+//   x: 100,
+//   stagger: 0.3,
+//   duration: 1.5
+// }, "+=1");
+tlPagina3.to('.angular-caja ', {
+  y: -150,
+  duration: 1.5,
+
+}, "+=2");
+
+
+tlPagina3.to('.angular-cajas-3 ', {
+  autoAlpha: 1,
+}, "<");
+
+tlPagina3.to('.angular-logo ', {
+  y: -100,
   duration: 1.5
-}, "+=1");
+}, "<");
+tlPagina3.to('.descirpcion-angular', {
+  y: -100,
+  opacity: 0,
+  duration: 1.5
+}, "<");
 
-tlPagina3.to('.angular-caja-magica', {
-  y: 410,
+tlPagina3.to('.angular-caja-1 ', {
+  opacity: 0,
+  duration: 1.5
+}, "<");
+
+tlPagina3.to('.angular-caja ', {
+  y: -770,
   duration: 1.5
 }, ">");
 
-tlPagina3.to('.angular-cajas', {
+tlPagina3.to('.angular-caja-2 ', {
   opacity: 0,
+  duration: 2.5
+}, "<");
 
-}, ">");
-tlPagina3.from('.angular-cajas-3', {
-  opacity: 0,
 
-}, ">");
-tlPagina3.to('.angular-cajas-3', {
-  opacity: 1,
 
-}, ">");
+
 
 
 
