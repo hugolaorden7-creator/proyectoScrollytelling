@@ -30,6 +30,9 @@
     }
 
     .figma-caja{
-        @apply  w-full p-6 border-gray-500 border-1 rounded-2xl
+        @apply  w-full p-5 border-gray-500 border-1 rounded-2xl
+    }
+        .angular-caja, .angular-caja-magica{
+        @apply  w-full p-5 border-gray-500 border-1 rounded-2xl
     }
 }

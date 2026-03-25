@@ -123,7 +123,7 @@ tlPagina2.to('.figma-descripcion', {
 });
 
 tlPagina2.to('.figma', {
-    y: -100,
+    y: -10,
 })
 
 tlPagina2.from('.figma-separador', {
@@ -278,20 +278,16 @@ tlPagina3.from('.angular-logo', {
 });
 
 
-tlPagina3.from('.pagina-3 h1', {
+tlPagina3.from('.angular-titulo', {
   y: 100,
   opacity: 0,
   filter: "blur(10px)", //difuminado
   duration: 1.5,
 });
 
-tlPagina3.from('.pagina-3 p', {
-  opacity: 0,
-  stagger: 0.5,
-  duration: 1.5,
-}, "-=0.5");
 
-tlPagina3.to('.pagina-3 h1, .pagina-3 p', {
+
+tlPagina3.to('.angular-titulo', {
   opacity: 0,
   scale: 0.9,
   stagger: 0.2,
@@ -312,7 +308,7 @@ tlPagina3.to('.angular-logo', {
 }, "<")
 
 tlPagina3.to('.angular-caja', {
-  y: -810,
+  y: -930,
   duration: 1.5
 })
 
