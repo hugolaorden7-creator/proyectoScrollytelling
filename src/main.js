@@ -318,7 +318,7 @@ tlPagina3.from('.angular-cajas-1', {
 })
 
 tlPagina3.to('.angular-logo', {
-  y: -160,
+  y: -120,
   duration: 2
 }, "<")
 
