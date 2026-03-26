@@ -13,14 +13,14 @@
     --color-fondo-claro: #F0F1E5;
     --color-fondo-oscuro: #0B1019;
 
-    --color-texto-claro: #0B1019; ;
-    --color-texto-oscuro: #FFFBEB;
+    --color-texto-fondo-claro: #0B1019; ;
+    --color-texto-fondo-oscuro: #FFFBEB;
 }
 
 @layer components 
 {
     .body{
-        @apply bg-fondo-claro dark:bg-fondo-oscuro text-texto-claro dark:text-texto-oscuro;
+        @apply bg-fondo-claro dark:bg-fondo-oscuro text-texto-fondo-claro dark:text-texto-fondo-oscuro;
     }
     .pagina-col{
         @apply w-full h-screen relative flex flex-col;
@@ -28,11 +28,7 @@
     .pagina-row{
         @apply w-full h-screen relative flex flex-row;
     }
-
-    .figma-caja{
-        @apply  w-full p-5 border-gray-500 border-1 rounded-2xl
-    }
-    .angular-caja, .angular-caja-magica{
+    .figma-caja, .angular-caja, .angular-caja-magica{
         @apply  w-full p-5 border-gray-500 border-1 rounded-2xl
     }
 }

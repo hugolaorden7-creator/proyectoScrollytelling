@@ -1,6 +1,7 @@
 import './style.css'
 
 //https://gsap.com/docs/v3/Plugins/ScrollTrigger/
+//https://gsap.com/docs/v3/Plugins/SplitText/
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(SplitText) 
@@ -94,7 +95,7 @@ tlPagina2.fromTo('.fondo-caja',
     duration: 2
   }
 )
-
+//Animacion al comenzar la pagina
 tlPagina2.from('.figma-logo', {
   y: -100,
   opacity: 0
@@ -146,6 +147,7 @@ tlPagina2.from(tituloPaginaSplit.chars, {
   stagger: 0.05,
   x:-100
 });
+//Animacion de cajas
 
 tlPagina2.from('.figma-caja', {
   opacity: 0,
@@ -204,13 +206,14 @@ tlPagina2.to('.figma-cajas', {
 
 // El logo se cae
 
+//el ease hace el rebote
 tlPagina2.to('.figma', {
   y: 10,
   rotate: 30,
   ease: 'bounce',
   duration: 2
 })
-
+//los valores vh es para que caiga verticalmente
 tlPagina2.to('.figma-separador', {
   y: '100vh',
   x: 300,
@@ -319,6 +322,8 @@ tlPagina3.to('.angular-logo', {
   duration: 2
 }, "<")
 
+
+//suben todas las cajas
 tlPagina3.to('.angular-caja', {
   y: -930,
   duration: 1.5
@@ -328,12 +333,10 @@ tlPagina3.from(".angular-cajas-2", {
   opacity: 0
 }, "<")
 
+//primera linea de cajas va desapareciendo OJO solo si tienen .angular-caja
 tlPagina3.to(".angular-cajas-1 > .angular-caja", {
   opacity: 0
 }, "<")
-
-
-
 
 
 tlPagina3.from(".angular-cajas-3", {
@@ -345,34 +348,9 @@ tlPagina3.to(".angular-cajas-2", {
   opacity: 0
 }, "<")
 
-
-/* Difuminado
-tlPagina3.from('.pagina-3 h1', {
-  y: 100,
-  opacity: 0,
-  filter: "blur(10px)", //difuminado
-  duration: 1.5,
-});
-
-tlPagina3.from('.pagina-3 p', {
-  opacity: 0,
-  stagger: 0.5,
-  duration: 1.5,
-}, "-=0.5");
-
-tlPagina3.to('.pagina-3 h1, .pagina-3 p', {
-  opacity: 0,
-  scale: 0.9,
-  stagger: 0.2,
-  duration: 1,
-  delay: 1
-});*/
-
-
-
 //-------------Pagina 3-------------
 
-//-------------PaginaUltima-------------
+//-------------Última Pagina-------------
 
 const tlPagina4 = gsap.timeline({
   scrollTrigger: {
@@ -383,27 +361,24 @@ const tlPagina4 = gsap.timeline({
     pin: true
   }
 });
-
-
-// split elements with the class "split" into words and characters
+// divide los elementos con la clase "split" en palabras y caracteres
 const split = SplitText.create(".split", { type: "words, chars" });
 
-// now animate the characters in a staggered fashion
+//animacion del texto
 tlPagina4.from(split.chars, {
   duration: 1, 
-  y: 100,       // animate from 100px below
-  autoAlpha: 0, // fade in from opacity: 0 and visibility: hidden
-  stagger: 0.05 // 0.05 seconds between each
+  y: 100,       
+  autoAlpha: 0, // Aparecer gradualmente desde una opacidad de 0 y una visibilidad oculta
+  stagger: 0.05 // 0,05 segundos entre cada uno
 });
 
 let theme = localStorage.getItem('theme');
 const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches
 
 
-//-------------PaginaUltima-------------
+//-------------Última Pagina-------------
 
 //-------------Manejador de temas-------------
-
 
 
 // Comprueba si ha sido la primera vez que el usuario entra a la pagina que estilo debe tener la pagina
@@ -447,222 +422,4 @@ if(theme == 'light') {
 else {
   fondo.classList.remove('hidden')
 }
-
-// localStorage.removeItem('theme') // Solo para probar si se pone el estilo por defecto del usuario
-
-    //     gsap.to('.pagina-2', {
-    //         scrollTrigger: {
-    //             trigger: '.pagina-2',
-    //             pin:true,                
-    //             start: 'top top',
-    //             end: '+=2000',
-    //         }
-    //     })
-    //     gsap.fromTo('.figma-logo', {
-    //         width: 300,
-    //     },{
-    //         width: 100,
-    //         scrollTrigger: {
-    //             trigger: '.figma-logo',
-    //             start: '+=300',
-    //             end: '+=1000',
-    //             toggleActions: "restart pause reverse pause"
-    //         }
-    //     })
-
-    //     gsap.fromTo('.figma-title', {
-    //         opacity: 0,
-    //         display: 'none'
-    //     },{
-    //         opacity: 1,
-    //         display: 'block',
-    //         scrollTrigger: {
-            
-    //             trigger: '.figma-title',
-    //             start: '+=300',
-    //             end: '+=1000',
-    //             toggleActions: "restart pause reverse pause"
-    //         }
-    //     })
-
-    // gsap.fromTo('.figma-caja', {
-    //         opacity: 0,
-    //         display: 'none'
-    //     },{
-    //         opacity: 1,
-    //         display: 'block',
-    //         scrollTrigger: {
-            
-    //             trigger: '.figma-caja',
-    //             start: '+=600',
-    //             end: '+=1000',
-    //             toggleActions: "restart pause reverse pause"
-    //         }
-    //     })
-    
-    
-
-
-
-//-------------Pagina 1-------------
-
-//-------------Pagina 2-------------
-
-
-/*
-let tlPagina2 = gsap.timeline({
-  scrollTrigger: {
-    trigger: '.pagina-2',
-    start: 'top top',
-    end: '+=500',
-    scrub: true,
-    pin: true
-  }
-});
-
-tlPagina2.fromTo('.figma-logo', {
-  scale: 1.5
-}, {
-  scale: 0.6,
-  duration: 1
-});
-
-tlPagina2.from('.figma-title', {
-  opacity: 0, //no se ve al principio
-  y: 50,
-  duration: 1
-}, "-=0.5"); //solapa con el siguiente
-
-tlPagina2.from('.figma-descripcion', {
-  opacity: 0,
-  x: 100,
-  duration: 1.5
-}, "+=1");
-
-tlPagina2.from('.figma-caja', {
-  opacity: 0,
-  y: 100,
-  stagger: 0.3,
-  duration: 1.5
-}, "+=1");
-//primera accion
-
-tlPagina2.to('.figma-caja-2 ', {
-  scale: 0.8,
-  duration: 1.5
-}, "+=0.5");
-
-tlPagina2.to('.figma-caja-3', {
-  scale: 0.8,
-  duration: 1.5
-}, "<");
-
-tlPagina2.to('.figma-caja-1', {
-  scale: 1.1,
-  duration: 1
-}, "<"); 
-//Segunda accion
-tlPagina2.to('.figma-caja-1', {
-  scale: 0.8,
-  duration: 1.5
-}, "+=0.5");
-
-tlPagina2.to('.figma-caja-2', {
-  scale: 1.1,
-  duration: 1
-}, "<"); 
-//tercera accion
-tlPagina2.to('.figma-caja-2', {
-  scale: 0.8,
-  duration: 1.5
-}, "+=0.5");
-
-tlPagina2.to('.figma-caja-3', {
-  scale: 1.1,
-  duration: 1
-}, "<"); 
-
-
-//FINAL
-tlPagina2.to('.figma-caja', {
-  scale: 1,
-  duration: 2
-}, "+=1");
-
-tlPagina2.to('.figma-cajas', {
-  opacity: 0,
-  scale: 0.5,
-  duration: 2
-}, "+=1");*/
-
-//-------------Pagina 2-------------
-
-
-
-//-------------Pagina3-------------
-
-
-/**
- //Estados del scrollTrigger en toggleActions; play pause resume reverse reset complete none
-    gsap.to(".boxB", {
-        scrollTrigger: {
-            trigger: ".boxB",
-            toggleActions: "restart none none none"
-            },
-        x: 400,
-        rotation: 360,
-        duration: 3,
-    });
-      
-       gsap.to(".boxC", {
-        scrollTrigger: {
-            trigger: ".boxC",
-            markers:true,
-            toggleActions: "restart pause reverse pause"
-            },
-        x: 400,
-        rotation: 360,
-        duration: 3,
-       });
-
-
-        let tl = gsap.timeline({
-             scrollTrigger: {
-                trigger: ".boxD",
-                start: "top center",
-                end: "top 100px",
-                scrub: 2,
-                markers:true,
-            },
-        })
-
-        tl.to(".boxD", {
-            x: 400,
-            rotation: 360,
-            ease: "none",
-            duration: 3,
-        })
-        .to(".boxD", {
-            backgroundColor: "purple",
-            duration: 1
-        })
-        .to(".boxD", {
-            x: 0,
-            duration: 3
-        })
-
-        gsap.to(".boxE", {
-            scrollTrigger: {
-                trigger: ".boxE",
-                start: "top center",
-                end: "top 100px",
-                markers: true,
-                pin: true, 
-                toggleActions: "restart pause reverse pause"
-                },
-            x: 400,
-            rotation: 360,
-            ease: "none",
-            duration: 3,
-        });
- */
+//-------------Manejador de temas-------------
